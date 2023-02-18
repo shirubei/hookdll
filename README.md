@@ -11,3 +11,6 @@
 这个现象是随机发生的，没有任何规律可言。可能是运行python程序的几十分钟后，几个小时后，或者几天后。而且什么时候开始发生堵塞也不知道，当发现的时候可能已经堵塞好几个小时了。\
 试着在run_forever函数里加里心跳和timeout设置（如下）后也还是会出现，只不过似乎频率变低了。但一直没有完全解决。如果有哪位解决了这个问题，请一定告知，多谢！\
 run_forever(ping_interval = 180, ping_timeout = 179, reconnect = 2 ) 
+
+如果您觉得本文对您有用，可以请作者喝杯咖啡。谢谢\
+![wechaPay_S](https://user-images.githubusercontent.com/37259748/219869140-916ca76d-798c-4a51-adc1-5eec10fb0632.jpg)
