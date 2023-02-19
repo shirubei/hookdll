@@ -2,9 +2,11 @@
 这是windows下指定版本微X的hook工具用的dll文件。专为3.2.1和3.3.0版的微X用的。\
 工具（注入器）的就从 https://github.com/cixingguangming55555/wechat-bot/tree/release/server 下载。\
 上述两个版本的是经过本人确认可以用的。另外，3.6版的我试过一次，但不行。其他版本未知。\
-具体使用方法很简单，我用的是Python语言，下面就python的实现来简要说一下。\
-在windows下安装了上述2个版本微X的任意一个后，登录微X，然后运行hook工具，这个时候它会显示当前的微X版本，在DLL文件下拉框中选择对应版本的dll，点注入DLL就完成了。\
-接下来通过websocket-client就可以收发消息了。这个稍微要写一些代码，大的框架可以参看上面这个github的client目录下的python目录里的代码，在其基础上加一些自己的代码就OK了。
+具体使用方法很简单，我用的是Python语言，下面就python的实现来简要说一下。
+
+在windows下安装了上述2个版本微X的任意一个后，登录微X，然后运行hook工具，这个时候它会显示当前的微X版本，在DLL文件下拉框中选择对应版本的dll，点注入DLL就完成了。接下来通过websocket-client就可以收发消息了。
+
+这样做相当于你有了一个跟微X通信的websocket 服务器端。然后再搞一个websocket client端，通过client与websocket server通信，它帮你转发给微X，就是这个意思。client端这个稍微要写一些代码，大的框架可以参看上面这个github的client目录下的各种语言的sample代码。我自己的就是参照python目录里的代码，接收消息和发送消息人家都给写好了，我们自己要做的就是在收消息后和发消息前再加上一些自己的处理所必须的代码就OK了。
 记得在安装完微X后在设置里把自动更新的勾给去掉。
 
 另外，我自己遇到的一个比较麻烦的问题。就是上述环境全部搞好，运行起来后一直开着，在运行python的那个命令行窗口中会显示python端通过websocket收到的每条消息（就管这个叫打log吧）。\
