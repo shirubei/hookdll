@@ -15,6 +15,8 @@
 试着在run_forever函数里加里心跳和timeout设置（如下）后也还是会出现，只不过似乎频率变低了。但一直没有完全解决。如果有哪位解决了这个问题，请一定告知，多谢！\
 run_forever(ping_interval = 180, ping_timeout = 179, reconnect = 2 ) 
 
+追记：终于找到上述问题的类似案例， https://github.com/sammchardy/python-binance/issues/268 人家说是命令行窗口自己的问题。说只要把 快熟编辑模式 去掉就OK了。
+
 有其他问题可一起讨论。加WX: Roby_Shi 由于有些实际的应用，想要代码的就不要来联系了。
 如果您觉得本文对您有用，可以请作者喝杯咖啡。谢谢
 
