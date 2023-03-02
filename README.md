@@ -16,7 +16,7 @@
 run_forever(ping_interval = 180, ping_timeout = 179, reconnect = 2 ) 
 
 追记：终于找到上述问题的类似案例， https://github.com/sammchardy/python-binance/issues/268 人家说是命令行窗口自己的问题。说只要把 快速编辑模式 去掉就OK了。试了一下，这个选项是要在每次启动命令后都要改，并不是同一个窗口就只改一次就OK的。具体地说，同一个程序跑起来以后设置了。等它结束后，就算是在同一个命令行窗口再执行，也还得再改一次设定。
-最方便的当然是代码了，以下把快速编辑模式和插入模式都关闭。
+最方便的当然是代码了，以下把快速编辑模式和插入模式都关闭。\
 import ctypes\
 kernel32 = ctypes.windll.kernel32\
 kernel32.SetConsoleMode(kernel32.GetStdHandle(-10), 128)  #disable qiuck edit mode and Insert mode of current console (cmd)
